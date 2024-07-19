@@ -22,19 +22,12 @@ This GitHub repository integrates various spike-based image reconstruction metho
 ## 🕶 Methods
 In this repository, we currently support the following methods: TFP<sup>[1]</sup>, TFI<sup>[1]</sup>, TFSTP<sup>[2]</sup>, Spk2ImgNet<sup>[3]</sup>, SSML<sup>[4]</sup>, and WGSE<sup>[5]</sup>, which take 41 spike frames as the input and reconstruct one sharp image.
 
-## 🗓️ TODO
-- [] Support more methods.
-- [] Support more datasets.
-- [] Support more metrics.
-
-## 🕶 Methods
-
-
 ## 📞 Contact
 Should you have any questions, please feel free to contact [mrchenkang@stu.pku.edu.cn](mailto:mrchenkang@stu.pku.edu.cn).
 
 ## 🙇‍ Acknowledgment
 The implementations of TFP, TFI and TFSTP are from the [SpikeCV](https://spikecv.github.io/). Other methods are implemented according to the paper official repository. We appreciate the effort of the contributors to these repositories.
+
 ## References
 > [1] Zhu, Lin, et al. "A retina-inspired sampling method for visual texture reconstruction." 2019 IEEE International Conference on Multimedia and Expo (ICME). IEEE, 2019.
 > 
