@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center"><img src="figures/zoo_new.png" ></h1>
+<h1 align="center"><img src="figures/zoo_new.png" style="width:50%;"></h1>
   <h1 align="center">Spike-based Image Reconstruction ZOO</h1>
 </p>
 
