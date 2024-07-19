@@ -1,5 +1,6 @@
 <h2 align="center"> 
-  <a href="">Spike-based Image Reconstruction ZOO</a>
+  <a href="">Spike-ZOO: A Comprehensive Collection of Spike-based Image Reconstruction Methods
+  </a>
 </h2>
 <h5 align="center"> 
 If you like it, please give us a star ⭐ on GitHub.  
