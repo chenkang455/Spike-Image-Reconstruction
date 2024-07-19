@@ -36,9 +36,9 @@ We currently provide common paired computational metrics for the REDS dataset, i
 
 ## 🍭 Startup
 ### Datasets Preparation
-All methods in this repository are trained using the REDS dataset<sup>[3]</sup>. The [train](https://drive.google.com/file/d/1ozR2-fNmU10gA_TCYUfJN-ahV6e_8Ke7/view?usp=sharing) and [test](https://drive.google.com/file/d/12q0yJ7V9KtF_y-ZcCn2B-q0zFP8ysdv3/view) parts can be downloaded using the provided links.
+All methods in this repository are trained using the `REDS` dataset<sup>[3]</sup>. The [train](https://drive.google.com/file/d/1ozR2-fNmU10gA_TCYUfJN-ahV6e_8Ke7/view?usp=sharing) and [test](https://drive.google.com/file/d/12q0yJ7V9KtF_y-ZcCn2B-q0zFP8ysdv3/view) parts can be downloaded using the provided links.
 
-The real-world spike dataset<sup>[3]</sup> is available for download [here](https://openi.pcl.ac.cn/Cordium/SpikeCV/datasets/dirs/57050f24-f6da-4670-bf2f-3134ca625cdc?type=-1).
+The `real-world` spike dataset<sup>[3]</sup> is available for download [here](https://openi.pcl.ac.cn/Cordium/SpikeCV/datasets/dirs/57050f24-f6da-4670-bf2f-3134ca625cdc?type=-1).
 
 After downloading, please put them under the `Data` folder and rename the train and test parts to `train` and `test` folders, respectively. The project should then be organized as follows:
 ```
@@ -67,13 +67,13 @@ This repository offers three usages:
 * Visualize image reconstruction results directly from the give input spike sequence like `Data/data.dat`.
 
 ### Arguments Overview
-We use three command-line arguments, `test_metric`, `test_metric`, and `test_imgs`, to specify the mode of use.
+We use three command-line arguments, `test_metric`, `test_metric`, and `test_imgs`, to specify the usage mode.
 
-`methods:` Specifies the methods to measure. Default 'Spk2ImgNet, WGSE, SSML, TFP, TFI, TFSTP'.
+`methods:` Specifies methods to measure. Default 'Spk2ImgNet, WGSE, SSML, TFP, TFI, TFSTP'.
 
-`metrics:` Specifies the types of metrics to measure. Default 'psnr, ssim, lpips, niqe, brisque, liqe_mix, clipiqa'.
+`metrics:` Specifies metrics to measure. Default 'psnr, ssim, lpips, niqe, brisque, liqe_mix, clipiqa'.
 
-`save_name:` Specifies the log file location for input. Default 'logs/result.log'.
+`save_name:` Specifies the log file location for input. Default `logs/result.log'.
 
 `spike_path:` Specifies the location of the spike sequence for visualization. Default 'Data/data.dat'.
 
