@@ -8,7 +8,6 @@ If you like it, please give us a star ⭐ on GitHub.
 
 <h5 align="center">
 
-[![License](https://img.shields.io/badge/License-MIT-yellow)](https://github.com/chenkang455/S-SDM)
 [![GitHub repo stars](https://img.shields.io/github/stars/chenkang455/Spike-Image-Reconstruction?style=flat&logo=github&logoColor=whitesmoke&label=Stars)](https://github.com/chenkang455/Spike-Image-Reconstruction/stargazers)&#160;
 </h5>
 
@@ -70,9 +69,9 @@ This repository offers three usages:
 ### Arguments Overview
 We use three command-line arguments, `test_metric`, `test_metric`, and `test_imgs`, to specify the mode of use.
 
-`methods:` Specifies the methods to measure. Default 'Spk2ImgNet, WGSE, SSML, TFP, TFI, TFSTP'
+`methods:` Specifies the methods to measure. Default 'Spk2ImgNet, WGSE, SSML, TFP, TFI, TFSTP'.
 
-`metrics:` Specifies the types of metrics to measure. Default 'psnr, ssim, lpips, niqe, brisque, liqe_mix, clipiqa'
+`metrics:` Specifies the types of metrics to measure. Default 'psnr, ssim, lpips, niqe, brisque, liqe_mix, clipiqa'.
 
 `save_name:` Specifies the log file location for input. Default 'logs/result.log'.
 
@@ -122,9 +121,9 @@ CUDA_VISIBLE_DEVICES=0 python compare.py
 ```
 
 ### Quantitative Comparison Table
-We offer a quantitative comparison table for our new work SPCS-Net with previous methods. 
+We offer a quantitative comparison table for our new work `SPCS-Net` with previous methods. 
 
-⭐ SPCS-Net is a more rapid, more efficient, more lightweight network for spike-based image reconstruction!
+⭐ `SPCS-Net` is a more rapid, more efficient, more lightweight network for spike-based image reconstruction!
 
 ![compare_table](figures/result.png)
 ## 📞 Contact
