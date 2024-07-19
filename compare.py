@@ -138,7 +138,7 @@ def img_reconstruct(spike,method_name,nor = False,large = True):
     cv2.imwrite(f'imgs/{spike_name}/{method_name}.png',recon_img)
     return recon_img
 
-# parameters estimation
+# parameters, latency and flops calculation
 def params_calculate(method_name):
     logger.info(f"Method {method_name} estimating parameters and flops...")
     network_construct(method_name)
