@@ -1,0 +1,6 @@
+Spk2ImgNet-----psnr: 38.6154  ssim: 0.9753  lpips: 0.0238  niqe: 4.2469  brisque: 25.3877  liqe_mix: 1.4737  clipiqa: 0.4098  
+WGSE-----psnr: 38.8702  ssim: 0.9770  lpips: 0.0219  niqe: 4.2413  brisque: 25.0548  liqe_mix: 1.4872  clipiqa: 0.4109  
+SSML-----psnr: 32.9437  ssim: 0.9207  lpips: 0.0879  niqe: 5.1870  brisque: 31.0911  liqe_mix: 1.2441  clipiqa: 0.4075  
+TFP-----psnr: 24.2873  ssim: 0.6436  lpips: 0.2738  niqe: 8.1967  brisque: 48.4796  liqe_mix: 1.0637  clipiqa: 0.2589  
+TFI-----psnr: 16.5029  ssim: 0.4544  lpips: 0.3822  niqe: 7.2886  brisque: 43.1812  liqe_mix: 1.1760  clipiqa: 0.3383  
+TFSTP-----psnr: 16.7499  ssim: 0.3777  lpips: 0.4553  niqe: 8.5804  brisque: 56.6023  liqe_mix: 1.1807  clipiqa: 0.3549  

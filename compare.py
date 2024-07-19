@@ -176,13 +176,13 @@ def params_calculate(method_name):
 def dataset_load(cls = 'spike'):
     global spike,dataloader,spike_name,spike_length
     if cls == 'spike':
-        spike_path = 'Data/data.dat'
+        spike_path = opt.spike_path
         spike = load_vidar_dat(spike_path)
         spike_length = spike.shape[0]
         spike = torch.tensor(spike)[None]
         spike_name,_ = os.path.splitext(os.path.basename(spike_path))
     elif cls == 'REDS':
-        dataset = SpikeData_REDS(opt.reds_folder,'test')
+        dataset = SpikeData_REDS(opt.reds_folder,'REDS','test')
         dataloader = torch.utils.data.DataLoader(dataset, batch_size=1, shuffle=False,num_workers=1)
     elif cls == 'Real':
         dataset = SpikeData_Real(opt.real_folder)
@@ -191,42 +191,52 @@ def dataset_load(cls = 'spike'):
 # main
 def main():
     global dataloader,logger,metric_list,method_list,metric_pair,metric_single,dataset_cls 
-    dataset_cls = 'spike'
+    dataset_cls = opt.cls
     # dataset preparation
     dataset_load(cls = dataset_cls)
-    logger = setup_logging('compare.log')
+    logger = setup_logging(opt.save_name)
     # metric and method definition
     method_list = ['Spk2ImgNet','WGSE','SSML','TFP','TFI','TFSTP']
-    # method_list = ['SPCS_1','SPCS_5','SPCS_10']
-    
+    method_totest = opt.methods.split(',')
+    if set(method_totest).issubset(method_list) == False:
+        raise RuntimeError(f"Have unsupported methods!")
+    else:
+        method_list = method_totest
     # lower better: lpips ; higher better: psnr,ssim
     metric_pair = ['psnr','ssim','lpips']
     # lower better: niqe,brisque ; higher better: liqe_max,clipiqa
     metric_single = ['niqe','brisque','liqe_mix','clipiqa']
+    # metric to test
+    metric_totest = opt.metrics.split(',')
+    if set(metric_totest).issubset(set(metric_pair + metric_single)) == False:
+        raise RuntimeError(f"Have unsupported metrics!")
+    elif dataset_cls == 'Real' and set(metric_totest).issubset(set(metric_single)) == False:
+        raise RuntimeError(f"Real dataset doesn't support reference metrics!")
+    else:
+        metric_list = metric_totest
+    # parameter setting
+    test_metric = opt.test_metric 
+    test_params = opt.test_params
+    test_imgs = opt.test_imgs
     
-    test_metric = False 
-    test_params = False 
-    test_imgs = True
-    test_folder_metric = False
-    
+    if sum([test_metric,test_params,test_imgs]) >= 2:
+        raise RuntimeError(f"Varaiables conflict!")
+
     # test -- metrics
     if test_metric == True:    
-        # metric_list = ['psnr','ssim','lpips','niqe','brisque','liqe_mix','clipiqa']
-        metric_list = ['niqe','brisque','liqe_mix','clipiqa']
-
         metric_construct()
         # test -- metric
         for method_name in method_list:
             metric_calculate(method_name)
         metric_print()
-        
+
     # test -- params
-    if test_params  == True:
+    elif test_params  == True:
         for method_name in method_list:
             params_calculate(method_name)
             
     # save -- imgs
-    if test_imgs == True:
+    elif test_imgs == True:
         print(spike_length)
         idx = 200
         if idx < 20 or idx >= spike_length - 21:
@@ -234,7 +244,7 @@ def main():
         for method_name in method_list:
             img_reconstruct(spike[:,idx-20:idx+21],method_name,nor = True)
     
-    # folder --test metrcis
+    # todo folder --test metrcis
     # if test_folder_metric == True:
     #     folder = 'imgs/train-350kmh'
     #     metric_list = ['niqe','brisque','liqe_mix','clipiqa']
@@ -257,5 +267,10 @@ if __name__ == "__main__":
     parser.add_argument('--test_metric', action='store_true',default = False)
     parser.add_argument('--test_params', action='store_true',default = False)
     parser.add_argument('--test_imgs', action='store_true',default = False)
+    parser.add_argument('--cls', default = 'spike',help = 'REDS, Real and spike three classes.')
+    parser.add_argument('--methods', default = 'Spk2ImgNet,WGSE,SSML,TFP,TFI,TFSTP',help = 'Methods to test.')
+    parser.add_argument('--metrics', default = 'psnr,ssim,lpips,niqe,brisque,liqe_mix,clipiqa',help = 'Metrics to test.')
+    parser.add_argument('--save_name', default = 'logs/result.log')
+    
     opt = parser.parse_args()
     main()
