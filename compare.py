@@ -13,6 +13,7 @@ from metrics import compute_img_metric,compute_img_metric_single
 from thop import profile
 import torch.nn.functional as F
 import time
+import argparse
 
 # network loading
 def network_construct(method_name):
@@ -171,21 +172,20 @@ def params_calculate(method_name):
     )    
     logger.info(re_msg)
 
-
 # data load
 def dataset_load(cls = 'spike'):
     global spike,dataloader,spike_name,spike_length
     if cls == 'spike':
-        spike_path = 'Data/recVidarReal2019/classB/train-350kmh.dat'
+        spike_path = 'Data/data.dat'
         spike = load_vidar_dat(spike_path)
         spike_length = spike.shape[0]
         spike = torch.tensor(spike)[None]
         spike_name,_ = os.path.splitext(os.path.basename(spike_path))
     elif cls == 'REDS':
-        dataset = SpikeData_REDS("Data/REDS","REDS",'test')
+        dataset = SpikeData_REDS(opt.reds_folder,'test')
         dataloader = torch.utils.data.DataLoader(dataset, batch_size=1, shuffle=False,num_workers=1)
     elif cls == 'Real':
-        dataset = SpikeData_Real("Data/recVidarReal2019")
+        dataset = SpikeData_Real(opt.real_folder)
         dataloader = torch.utils.data.DataLoader(dataset, batch_size=1, shuffle=False,num_workers=1)
 
 # main
@@ -235,19 +235,27 @@ def main():
             img_reconstruct(spike[:,idx-20:idx+21],method_name,nor = True)
     
     # folder --test metrcis
-    if test_folder_metric == True:
-        folder = 'imgs/train-350kmh'
-        metric_list = ['niqe','brisque','liqe_mix','clipiqa']
-        metric_construct()
-        for img_path in os.listdir(folder):
-            img = cv2.imread(os.path.join(folder,img_path))[:,:,0] / 255
-            img = torch.tensor(img)[None,None].cuda().float()
-            print(img.max(),img.min())
-            method_name = img_path.split('.')[0]
-            if method_name not in method_list:
-                continue
-            metric_update(method_name,img,None)
-        metric_print()
+    # if test_folder_metric == True:
+    #     folder = 'imgs/train-350kmh'
+    #     metric_list = ['niqe','brisque','liqe_mix','clipiqa']
+    #     metric_construct()
+    #     for img_path in os.listdir(folder):
+    #         img = cv2.imread(os.path.join(folder,img_path))[:,:,0] / 255
+    #         img = torch.tensor(img)[None,None].cuda().float()
+    #         method_name = img_path.split('.')[0]
+    #         if method_name not in method_list:
+    #             continue
+    #         metric_update(method_name,img,None)
+    #     metric_print()
         
 if __name__ == "__main__":
+    global opt
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--reds_folder', type=str,default='Data/REDS')
+    parser.add_argument('--real_folder', type=str,default='Data/recVidarReal2019')
+    parser.add_argument('--spike_path', type=str,default='Data/data.dat')
+    parser.add_argument('--test_metric', action='store_true',default = False)
+    parser.add_argument('--test_params', action='store_true',default = False)
+    parser.add_argument('--test_imgs', action='store_true',default = False)
+    opt = parser.parse_args()
     main()

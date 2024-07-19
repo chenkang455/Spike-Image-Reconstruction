@@ -21,7 +21,7 @@ If you like it, please give us a star ⭐ on GitHub.
 This GitHub repository integrates various spike-based image reconstruction methods. It aims to assist in comparing the performance of previous approaches on the standard REDS dataset, Real-spike dataset, or a single spike sequence.
 
 ## 🕶 Methods
-In this repository, we currently support the following methods: TFP<sup>[1]</sup>, TFI<sup>[1]</sup>, TFSTP<sup>[2]</sup>, Spk2ImgNet<sup>[3]</sup>, SSML<sup>[4]</sup>, and WGSE<sup>[5]</sup>, which take 41 spike frames as the input and reconstruct one sharp image.
+In this repository, we currently support the following methods: TFP<sup>[1]</sup>, TFI<sup>[1]</sup>, TFSTP<sup>[2]</sup>, Spk2ImgNet<sup>[3]</sup>, SSML<sup>[4]</sup>, and WGSE<sup>[5]</sup>, which take 41 spike frames as the input and reconstruct one sharp image. 
 
 ## 📞 Contact
 Should you have any questions, please feel free to contact [mrchenkang@stu.pku.edu.cn](mailto:mrchenkang@stu.pku.edu.cn).
