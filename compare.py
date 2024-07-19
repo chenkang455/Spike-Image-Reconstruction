@@ -6,7 +6,7 @@ from compare_zoo.SSML.model import DoubleNet
 from compare_zoo.TFP.tfp_model import TFP
 from compare_zoo.TFI.tfi_model import TFI
 from compare_zoo.TFSTP.tfstp_model import TFSTP
-# from models import SPCS_Net
+from compare_zoo.SPCS_Net.model import SPCS_Net
 from dataset import SpikeData_REDS,SpikeData_Real
 from tqdm import tqdm
 from metrics import compute_img_metric,compute_img_metric_single
@@ -32,8 +32,8 @@ def network_construct(method_name):
         load_path = "compare_zoo/WGSE/model_best.pt"
         load_net = True
     elif method_name.startswith("SPCS"):
-        # spkrecon_net = SPCS_Net()
-        # load_path = f"models/{method_name}.pth"
+        spkrecon_net = SPCS_Net()
+        load_path = f"models/{method_name}.pth"
         load_net = True
     elif method_name == "SSML":
         spkrecon_net = DoubleNet()
