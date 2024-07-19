@@ -10,7 +10,7 @@ If you like it, please give us a star ⭐ on GitHub.
 
 [![License](https://img.shields.io/badge/License-MIT-yellow)](https://github.com/chenkang455/S-SDM)
 [![GitHub repo stars](https://img.shields.io/github/stars/chenkang455/Spike-Image-Reconstruction?style=flat&logo=github&logoColor=whitesmoke&label=Stars)](https://github.com/chenkang455/Spike-Image-Reconstruction/stargazers)&#160;
-</h5>![alt text](image.png)
+</h5>
 
 <p align="center">
   <img src="figures/zoo_new.png" style="width:50%;">
@@ -18,7 +18,7 @@ If you like it, please give us a star ⭐ on GitHub.
 
 
 ## 📕 Introduction 
-This GitHub repository integrates various spike-based image reconstruction methods. It aims to assist in comparing the performance of previous approaches on the standard REDS dataset, Real-spike dataset, or a single spike sequence.
+This repository integrates various **spike-based image reconstruction methods**. It aims to assist in comparing and visualizing previous approaches on the standard REDS dataset, Real-world spike dataset, or a single spike sequence.
 
 ## 🗓️ Todo
 - [ ] Support more spike-based image reconstruction methods. (CVPR24 Zhao et al., ACM MM23 Zhu et al., TCSVT23 Zhao et al.) 
@@ -28,10 +28,10 @@ This GitHub repository integrates various spike-based image reconstruction metho
 </form>
 
 ## 🕶 Methods
-In this repository, we currently support the following methods: TFP<sup>[1]</sup>, TFI<sup>[1]</sup>, TFSTP<sup>[2]</sup>, Spk2ImgNet<sup>[3]</sup>, SSML<sup>[4]</sup>, and WGSE<sup>[5]</sup>, which take 41 spike frames as the input and reconstruct one sharp image. 
+In this repository, we currently support the following methods: `TFP`<sup>[1]</sup>, `TFI`<sup>[1]</sup>, `TFSTP`<sup>[2]</sup>, `Spk2ImgNet`<sup>[3]</sup>, `SSML`<sup>[4]</sup>, and `WGSE`<sup>[5]</sup>, which take 41 spike frames as the input and reconstruct one sharp image. 
 
 ## 🌏 Metrics
-We currently provide common paired computational metrics for the REDS dataset, including PSNR, SSIM, and LPIPS, as well as no-reference metrics such as NIQE, BRISQUE, LIQE_MIX, and CLIPiQA. For the real-world spike dataset, we only offer no-reference metrics: NIQE, BRISQUE, LIQE_MIX, and CLIPiQA.
+We currently provide common paired computational metrics for the REDS dataset, including PSNR, SSIM, and LPIPS, as well as no-reference metrics such as `NIQE`, `BRISQUE`, `LIQE_MIX`, and `CLIPIQA`. For the real-world spike dataset, we only offer no-reference metrics: `NIQE`, `BRISQUE`, `LIQE_MIX`, and `CLIPIQA`.
 
 
 
@@ -41,7 +41,7 @@ All methods in this repository are trained using the REDS dataset<sup>[3]</sup>.
 
 The real-world spike dataset<sup>[3]</sup> is available for download [here](https://openi.pcl.ac.cn/Cordium/SpikeCV/datasets/dirs/57050f24-f6da-4670-bf2f-3134ca625cdc?type=-1).
 
-After downloading, please put them under the 'Data' folder and rename the train and test parts to 'train' and 'test' folders, respectively. The project should then be organized as follows:
+After downloading, please put them under the `Data` folder and rename the train and test parts to `train` and `test` folders, respectively. The project should then be organized as follows:
 ```
 <project root>
 ├── compare_zoo
@@ -122,9 +122,9 @@ CUDA_VISIBLE_DEVICES=0 python compare.py
 ```
 
 ### Quantitative Comparison Table
-We also offer a quantitative comparison table for our new work, SPCS-Net, alongside previous methods. 
+We offer a quantitative comparison table for our new work SPCS-Net with previous methods. 
 
-SPCS-Net is a more rapid, more efficient, more lightweight network for spike-based image reconstruction!
+⭐ SPCS-Net is a more rapid, more efficient, more lightweight network for spike-based image reconstruction!
 
 ![compare_table](figures/result.png)
 ## 📞 Contact
@@ -133,7 +133,8 @@ Should you have any questions, please feel free to contact [mrchenkang@stu.pku.e
 ## 🙇‍ Acknowledgment
 Implementations of TFP, TFI and TFSTP are from the [SpikeCV](https://spikecv.github.io/). Other methods are implemented according to the paper official repository. Implementations of non-reference metrics are from the [IQA-Pytorch](https://github.com/chaofengc/IQA-PyTorch).We appreciate the effort of the contributors to these repositories.
 
-## References
+
+## 🧐 References
 [1] Zhu, Lin, et al. "A retina-inspired sampling method for visual texture reconstruction." 2019 IEEE International Conference on Multimedia and Expo (ICME). IEEE, 2019.<br>
 [2] Zheng, Yajing, et al. "Capture the moment: High-speed imaging with spiking cameras through short-term plasticity." IEEE Transactions on Pattern Analysis and Machine Intelligence 45.7 (2023): 8127-8142.<br>
 [3] Zhao, Jing, et al. "Spk2imgnet: Learning to reconstruct dynamic scene from continuous spike stream." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2021.<br>
