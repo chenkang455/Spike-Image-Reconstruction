@@ -1,10 +1,15 @@
-## Summary
+<p align="center">
+  <h1 align="center"><img src="figures/zoo.png" width="700"></h1>
+  <h1 align="center">Spike-based Image Reconstruction ZOO</h1>
+</p>
+
+## Introduction 
 This GitHub repository integrates various spike-based image reconstruction methods. It aims to assist in comparing the effectiveness of previous approaches on the standard REDS dataset, real-spike datasets, and a single spike dat.
 
 ## Methods
-In this repository, we currently support the following methods: TFP[1], TFI[1], TFSTP[2], Spk2ImgNet[3], SSML[4], and WGSE[5].
+In this repository, we currently support the following methods: TFP [1], TFI [1], TFSTP [2], Spk2ImgNet [3], SSML [4], and WGSE [5].
 
-
+## References
 > [1] Zhu, Lin, et al. "A retina-inspired sampling method for visual texture reconstruction." 2019 IEEE International Conference on Multimedia and Expo (ICME). IEEE, 2019.
 > 
 > [2] Zheng, Yajing, et al. "Capture the moment: High-speed imaging with spiking cameras through short-term plasticity." IEEE Transactions on Pattern Analysis and Machine Intelligence 45.7 (2023): 8127-8142.
