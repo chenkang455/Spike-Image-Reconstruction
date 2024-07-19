@@ -1,14 +1,40 @@
+<h2 align="center"> 
+  <a href="">Spike-based Image Reconstruction ZOO</a>
+</h2>
+<h5 align="center"> 
+If you like it, please give us a star ⭐ on GitHub.  
+</h5>
+
+<h5 align="center">
+
+[![License](https://img.shields.io/badge/License-MIT-yellow)](https://github.com/chenkang455/S-SDM)
+[![GitHub repo stars](https://img.shields.io/github/stars/chenkang455/Spike-Image-Reconstruction?style=flat&logo=github&logoColor=whitesmoke&label=Stars)](https://github.com/chenkang455/Spike-Image-Reconstruction/stargazers)&#160;
+</h5>
+
 <p align="center">
-<h1 align="center"><img src="figures/zoo_new.png" style="width:50%;"></h1>
-  <h1 align="center">Spike-based Image Reconstruction ZOO</h1>
+  <img src="figures/zoo_new.png" style="width:50%;">
 </p>
 
-## Introduction 
-This GitHub repository integrates various spike-based image reconstruction methods. It aims to assist in comparing the effectiveness of previous approaches on the standard REDS dataset, real-spike datasets, and a single spike dat.
 
-## Methods
-In this repository, we currently support the following methods: TFP [1], TFI [1], TFSTP [2], Spk2ImgNet [3], SSML [4], and WGSE [5].
+## 📕 Introduction 
+This GitHub repository integrates various spike-based image reconstruction methods. It aims to assist in comparing the performance of previous approaches on the standard REDS dataset, Real-spike dataset, or a single spike sequence.
 
+## 🕶 Methods
+In this repository, we currently support the following methods: TFP<sup>[1]</sup>, TFI<sup>[1]</sup>, TFSTP<sup>[2]</sup>, Spk2ImgNet<sup>[3]</sup>, SSML<sup>[4]</sup>, and WGSE<sup>[5]</sup>, which take 41 spike frames as the input and reconstruct one sharp image.
+
+## 🗓️ TODO
+- [] Support more methods.
+- [] Support more datasets.
+- [] Support more metrics.
+
+## 🕶 Methods
+
+
+## 📞 Contact
+Should you have any questions, please feel free to contact [mrchenkang@stu.pku.edu.cn](mailto:mrchenkang@stu.pku.edu.cn).
+
+## 🙇‍ Acknowledgment
+The implementations of TFP, TFI and TFSTP are from the [SpikeCV](https://spikecv.github.io/). Other methods are implemented according to the paper official repository. We appreciate the effort of the contributors to these repositories.
 ## References
 > [1] Zhu, Lin, et al. "A retina-inspired sampling method for visual texture reconstruction." 2019 IEEE International Conference on Multimedia and Expo (ICME). IEEE, 2019.
 > 
