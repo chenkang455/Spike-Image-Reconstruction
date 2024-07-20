@@ -82,42 +82,41 @@ We use three command-line arguments, `test_params`, `test_metric`, and `test_img
 > ❗: The execution of `TFSTP` is notably slow. Feel free to omit this method from testing if you prefer to accelerate the process.
 ### Measure Computational Complexity
 ```
-CUDA_VISIBLE_DEVICES=0 python compare.py
---test_params
---save_name 'logs/params.log'
---methods 'Spk2ImgNet, WGSE, SSML, TFP, TFI, TFSTP'
+CUDA_VISIBLE_DEVICES=3 python compare.py \
+--test_params \
+--save_name 'logs/params.log' \
+--methods 'Spk2ImgNet,WGSE,SSML,TFP,TFI,TFSTP'
 ```
 We provide the pre-calculated result in [logs/params.log](logs/params.log). Please note that 'Latency' may vary slightly with each run. Our results are measured on a single NVIDIA RTX 4090 GPU.
 
 ### Measure Performance Metrics
 #### REDS
 ```
-CUDA_VISIBLE_DEVICES=0 python compare.py
---test_metric
---save_name 'logs/reds_metric.log'
---methods 'Spk2ImgNet, WGSE, SSML, TFP, TFI, TFSTP'
---cls 'REDS'
---metrics 'psnr, ssim, lpips, niqe, brisque, liqe_mix, clipiqa'
+CUDA_VISIBLE_DEVICES=0 python compare.py \
+--test_metric \
+--save_name 'logs/reds_metric.log' \
+--methods 'Spk2ImgNet,WGSE,SSML,TFP,TFI,TFSTP' \
+--cls 'REDS' \
+--metrics 'psnr,ssim,lpips,niqe,brisque,liqe_mix,clipiqa'
 ```
 We provide the pre-calculated result in [logs/reds_metric.log](logs/reds_metric.log).
 #### Real-world Spike Dataset
 ```
-CUDA_VISIBLE_DEVICES=0 python compare.py
---test_metric
---save_name 'logs/real_metric.log'
---methods 'Spk2ImgNet, WGSE, SSML, TFP, TFI, TFSTP'
---cls 'Real'
---metrics 'niqe, brisque, liqe_mix, clipiqa'
+CUDA_VISIBLE_DEVICES=0 python compare.py \
+--test_metric \
+--save_name 'logs/real_metric.log' \
+--methods 'Spk2ImgNet,WGSE,SSML,TFP,TFI,TFSTP' \
+--cls 'Real' \
+--metrics 'niqe,brisque,liqe_mix,clipiqa'
 ```
 We provide the pre-calculated result in [logs/real_metric.log](logs/real_metric.log).
 
 ### Visualize Reconstruction Results
 ```
-CUDA_VISIBLE_DEVICES=0 python compare.py
---test_imgs
---methods 'Spk2ImgNet, WGSE, SSML, TFP, TFI, TFSTP'
---cls 'spike'
---spike_path 'Data/data.dat'
+CUDA_VISIBLE_DEVICES=0 python compare.py \
+--test_imgs \
+--methods 'Spk2ImgNet,WGSE,SSML,TFP,TFI,TFSTP' \
+--cls 'spike' \
 ```
 
 ### Quantitative Comparison Table
