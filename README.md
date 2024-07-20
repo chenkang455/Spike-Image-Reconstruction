@@ -23,7 +23,7 @@ This repository integrates various **spike-based image reconstruction methods**.
 - [ ] Support more spike-based image reconstruction methods. (CVPR24 Zhao et al., ACM MM23 Zhu et al., TCSVT23 Zhao et al.) 
 - [ ] Support more datasets. (CVPR24 Zhao et al., TCSVT23 Zhao et al.)
 - [ ] Support more metrics. (More non-reference metrics.)
-- [ ] Support more evaluation tools. 
+- [ ] Support more evaluation tools. (Evaluate the non-reference metrics of data.dat.)
 </form>
 
 ## 🕶 Methods
@@ -67,7 +67,7 @@ This repository offers three usages:
 * Visualize image reconstruction results directly from the give input spike sequence like `Data/data.dat`.
 
 ### Arguments Overview
-We use three command-line arguments, `test_metric`, `test_metric`, and `test_imgs`, to specify the usage mode.
+We use three command-line arguments, `test_params`, `test_metric`, and `test_imgs`, to specify the usage mode.
 
 `methods:` Specifies methods to measure. Default 'Spk2ImgNet, WGSE, SSML, TFP, TFI, TFSTP'.
 
