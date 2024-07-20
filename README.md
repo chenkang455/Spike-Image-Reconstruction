@@ -35,6 +35,14 @@ We currently provide common paired computational metrics for the REDS dataset, i
 
 
 ## 🍭 Startup
+### Enviroment Setup
+Our python enviroment is `3.9.19`, run the following code to setup the packages for the enviroment.
+```
+git clone git@github.com:chenkang455/Spike-Zoo.git
+cd Spike-Zoo
+pip install -r requirements.txt
+```
+
 ### Datasets Preparation
 All methods in this repository are trained using the `REDS` dataset<sup>[3]</sup>. The [train](https://drive.google.com/file/d/1ozR2-fNmU10gA_TCYUfJN-ahV6e_8Ke7/view?usp=sharing) and [test](https://drive.google.com/file/d/12q0yJ7V9KtF_y-ZcCn2B-q0zFP8ysdv3/view) parts can be downloaded using the provided links.
 
@@ -64,7 +72,7 @@ This repository offers three usages:
 
 * Quantitatively measure the parameter sizes, FLOPS, and latency of various methods.
 
-* Visualize image reconstruction results directly from the give input spike sequence like `Data/data.dat`.
+* Visualize image reconstruction results directly from the given input spike sequence like `Data/data.dat`.
 
 ### Arguments Overview
 We use three command-line arguments, `test_params`, `test_metric`, and `test_imgs`, to specify the usage mode.
