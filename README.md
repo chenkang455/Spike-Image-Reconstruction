@@ -82,7 +82,7 @@ We use three command-line arguments, `test_params`, `test_metric`, and `test_img
 > ❗: The execution of `TFSTP` is notably slow. Feel free to omit this method from testing if you prefer to accelerate the process.
 ### Measure Computational Complexity
 ```
-CUDA_VISIBLE_DEVICES=3 python compare.py \
+CUDA_VISIBLE_DEVICES=0 python compare.py \
 --test_params \
 --save_name 'logs/params.log' \
 --methods 'Spk2ImgNet,WGSE,SSML,TFP,TFI,TFSTP'

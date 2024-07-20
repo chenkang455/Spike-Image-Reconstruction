@@ -1,5 +1,5 @@
 # test parameters flops and latency
-CUDA_VISIBLE_DEVICES=3 python compare.py \
+CUDA_VISIBLE_DEVICES=0 python compare.py \
 --test_params \
 --save_name 'logs/params.log' \
 --methods 'Spk2ImgNet,WGSE,SSML,TFP,TFI,TFSTP'
