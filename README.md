@@ -46,7 +46,7 @@ pip install -r requirements.txt
 ### Datasets Preparation
 All methods in this repository are trained using the `REDS` dataset<sup>[3]</sup>. The [train](https://drive.google.com/file/d/1ozR2-fNmU10gA_TCYUfJN-ahV6e_8Ke7/view?usp=sharing) and [test](https://drive.google.com/file/d/12q0yJ7V9KtF_y-ZcCn2B-q0zFP8ysdv3/view) parts can be downloaded using the provided links.
 
-The `real-world` spike dataset<sup>[3]</sup> is available for download [here](https://openi.pcl.ac.cn/Cordium/SpikeCV/datasets/dirs/57050f24-f6da-4670-bf2f-3134ca625cdc?type=-1).
+The `real-world` spike dataset<sup>[6]</sup> is available for download [here](https://openi.pcl.ac.cn/Cordium/SpikeCV/datasets/dirs/57050f24-f6da-4670-bf2f-3134ca625cdc?type=-1).
 
 After downloading, please put them under the `Data` folder and rename the train and test parts to `train` and `test` folders, respectively. The project should then be organized as follows:
 ```
