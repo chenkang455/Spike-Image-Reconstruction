@@ -12,7 +12,7 @@ If you like it, please give us a star ⭐ on GitHub.
 </h5>
 
 <p align="center">
-  <img src="figures/zoo_new.png" style="width:50%;">
+  <img src="figures/zoo_new.png" style="width:100%;">
 </p>
 
 
